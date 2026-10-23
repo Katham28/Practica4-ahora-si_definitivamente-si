@@ -2,14 +2,14 @@ import { Platform, StyleSheet } from "react-native";
 
 
 export const colors = {
-	crema: "#090909", //fondo
-	rosa: "#ff8502", //botones principales
-	rosaClaro: "#f9f6f7", //tarjetas,
-	salvia: "#d4ff00", //verde hojita, botones secundarios
-	salviaOscuro: "#0703ff", //texto verde
-	cafe: "#ff03af", //texto principal
-	lavanda: "#7300ff", //detalles
-	blanco: "#000000",
+	negro: "#090909", //fondo
+	naranjaNeon: "#ff8502", //botones principales
+	verdeNeon: "#00ff19", //tarjetas,
+	amarilloNeon: "#d4ff00", //verde hojita, botones secundarios
+	azulNeon: "#0080ff", //texto verde
+	rosaNeon: "#ff03af", //texto principal
+	moradoNeon: "#7300ff", //detalles
+	blanco: "#ffffff",
 };
 
 //fuentes: serif para títulos (tipo vintage), redondita para lo demás
@@ -24,18 +24,18 @@ export const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: "center",
 		justifyContent: "center",
-		backgroundColor: colors.crema,
+		backgroundColor: colors.negro,
 		padding: 20,
 	},
 
 	card: {
-		backgroundColor: colors.rosaClaro,
+		backgroundColor: colors.rosaNeon,
 		borderRadius: 20,
 		padding: 16,
 		margin: 10,
 		alignItems: "center",
 		borderWidth: 2,
-		borderColor: colors.rosa,
+		borderColor: colors.rosaNeon,
 	},
 
 	row: {
@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
 		fontFamily: fonts.titulo,
 		fontSize: 40,
 		fontWeight: "bold",
-		color: colors.cafe,
+		color: colors.blanco,
 		textAlign: "center",
 		marginBottom: 10,
 	},
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
 		fontFamily: fonts.titulo,
 		fontSize: 30,
 		fontWeight: "bold",
-		color: colors.cafe,
+		color: colors.blanco,
 		textAlign: "center",
 		marginBottom: 10,
 	},
@@ -67,33 +67,53 @@ export const styles = StyleSheet.create({
 		fontFamily: fonts.titulo,
 		fontSize: 24,
 		fontStyle: "italic",
-		color: colors.salviaOscuro,
+		color: colors.azulNeon,
 		textAlign: "center",
 		marginBottom: 8,
 	},
 	text: {
 		fontFamily: fonts.texto,
 		fontSize: 18,
-		color: colors.cafe,
+		color: colors.blanco,
 		textAlign: "center",
+	},
+
+	input: {
+		fontFamily: fonts.texto,
+		fontSize: 18,
+		color: colors.azulNeon,
+		textAlign: "center",
+		backgroundColor: colors.blanco,
+		borderColor: colors.azulNeon,
+		borderWidth: 2,
+		borderRadius: 8,
+		padding: 8,
+		marginBottom: 10,
+		width: "80%",
+		
 	},
 	smallText: {
 		fontFamily: fonts.texto,
 		fontSize: 14,
-		color: colors.salviaOscuro,
+		color: colors.blanco,
 		textAlign: "center",
 	},
-	//para el timer y el score
+
+	foto: {
+		width: 100,
+		height: 100,
+		borderRadius: 50,
+		marginBottom: 10,
+	},
 	bigNumber: {
 		fontFamily: fonts.titulo,
 		fontSize: 32,
 		fontWeight: "bold",
-		color: colors.rosa,
+		color: colors.rosaNeon,
 	},
 
-
 	button1: {
-		backgroundColor: colors.rosa,
+		backgroundColor: colors.rosaNeon,
 		paddingVertical: 12,
 		paddingHorizontal: 28,
 		margin: 10,
@@ -104,7 +124,7 @@ export const styles = StyleSheet.create({
 	},
 
 	button2: {
-		backgroundColor: colors.salvia,
+		backgroundColor: colors.verdeNeon,
 		paddingVertical: 12,
 		paddingHorizontal: 28,
 		margin: 10,
@@ -121,7 +141,7 @@ export const styles = StyleSheet.create({
 	},
 
 	buttonSecondary: {
-		backgroundColor: colors.salvia,
+		backgroundColor: colors.naranjaNeon,
 		paddingVertical: 12,
 		paddingHorizontal: 28,
 		margin: 10,
@@ -138,22 +158,22 @@ export const styles = StyleSheet.create({
 		margin: 10,
 		borderRadius: 30,
 		borderWidth: 2,
-		borderColor: colors.rosa,
+		borderColor: colors.rosaNeon,
 		alignItems: "center",
 	},
 	buttonOutlineText: {
 		fontFamily: fonts.texto,
 		fontSize: 20,
 		fontWeight: "bold",
-		color: colors.rosa,
+		color: colors.rosaNeon,
 	},
 
 
 	board: {
-		backgroundColor: colors.rosaClaro,
+		backgroundColor: colors.rosaNeon,
 		borderRadius: 16,
 		borderWidth: 3,
-		borderColor: colors.salvia,
+		borderColor: colors.moradoNeon,
 	},
 
 	//imágenes de flores sueltas (decoración)
