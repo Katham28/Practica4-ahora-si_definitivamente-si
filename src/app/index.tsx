@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { ActivityIndicator, Pressable, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Image, Pressable, Text, TextInput, View } from "react-native";
 import { login } from "../api";
 import { styles } from "../styles";
 
@@ -34,7 +34,8 @@ export default function Index() {
 	return (
 		<View style={styles.container}>
 
-			<Text style={styles.title}>Corporativo distópico</Text>
+	<Image source={require("../../assets/logo.png")} style={styles.flowerttile} />
+			<Text style={styles.title}>CyberCorp</Text>
 
 			<Text style={styles.subtitle}>Ingresa usuario</Text>
 			<TextInput style={styles.input} placeholder="Usuario"
