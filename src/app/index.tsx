@@ -34,7 +34,7 @@ export default function Index() {
 	return (
 		<View style={styles.container}>
 
-	<Image source={require("../../assets/logo.png")} style={styles.flowerttile} />
+	<Image source={require("../../assets/logo2.png")} style={styles.flowerttile} />
 			<Text style={styles.title}>CyberCorp</Text>
 
 			<Text style={styles.subtitle}>Ingresa usuario</Text>
@@ -48,7 +48,7 @@ export default function Index() {
 			{error !== "" && <Text style={styles.smallText}>{error}</Text>}
 
 			<Pressable
-				style={styles.button1}
+				style={[styles.button1, { marginTop: 30 }]}
 				disabled={cargando}
 				onPress={iniciarSesion}>
 				{cargando

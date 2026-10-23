@@ -22,16 +22,15 @@ export default function Credencial() {
 	return (
 		<View style={styles.container}>
 
-			<Text style={styles.title}>Corporativo distópico</Text>
+	<Image source={require("../../assets/logo2.png")} style={styles.flowerttile} />
+			<Text style={styles.title}>CyberCorp</Text>
 
 			<View style={styles.card}>
+				<Text style={styles.mintitle}>{datos.username}  </Text>
 				<Image source={datos.pfp_url} style={styles.foto} contentFit="cover" />
-				<Text style={styles.subtitle}>{datos.username}  </Text>
-				<Text style={styles.smallText}>ID: {datos.id}</Text>
-				<Text style={styles.smallText}>Fullname: {datos.firstname} {datos.lastname}</Text>
-				<Text style={styles.smallText}>Email: {datos.email}</Text>
-				<Text style={styles.smallText}>XP: {datos.xp}</Text>
-				<Text style={styles.smallText}>Créditos: {datos.credits}</Text>
+
+				<Text style={styles.mintitle}> {datos.id}</Text>
+				<Text style={styles.mintitle}> {datos.firstname} {datos.lastname}</Text>
 			</View>
 
 			<Pressable

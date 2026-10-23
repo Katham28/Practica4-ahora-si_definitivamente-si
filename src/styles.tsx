@@ -36,6 +36,15 @@ export const styles = StyleSheet.create({
 		alignItems: "center",
 		borderWidth: 2,
 		borderColor: colors.rosaNeon,
+		width: "80%",
+	},
+
+	foto: {
+		width: 180,
+		height: 180,
+		borderRadius: 80,
+		marginBottom: 10,
+
 	},
 
 	row: {
@@ -52,7 +61,7 @@ export const styles = StyleSheet.create({
 		fontWeight: "bold",
 		color: colors.blanco,
 		textAlign: "center",
-		marginBottom: 10,
+		marginBottom: 50,
 	},
 
 	mintitle: {
@@ -99,12 +108,7 @@ export const styles = StyleSheet.create({
 		textAlign: "center",
 	},
 
-	foto: {
-		width: 100,
-		height: 100,
-		borderRadius: 50,
-		marginBottom: 10,
-	},
+
 	bigNumber: {
 		fontFamily: fonts.titulo,
 		fontSize: 32,
