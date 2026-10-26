@@ -19,6 +19,18 @@ const fonts = {
 };
 
 export const styles = StyleSheet.create({
+	creditosPantalla: { flex: 1, backgroundColor: colors.negro },
+	creditosContenido: { alignItems: 'center', padding: 20, paddingBottom: 40 },
+	creditosTitulo: { marginBottom: 20 },
+	creditosTarjeta: { width: '100%', maxWidth: 480 },
+	creditosIntegrante: { color: colors.blanco, fontSize: 14, textAlign: 'center', lineHeight: 22, marginBottom: 8 },
+	creditosDato: { color: colors.blanco, fontSize: 16, fontWeight: 'bold', marginTop: 12, marginBottom: 6 },
+	tecnologiaFila: { flexDirection: 'row', alignItems: 'center', gap: 12, width: '100%', marginTop: 14 },
+	tecnologiaLogoFondo: { width: 96, height: 72, padding: 12, borderRadius: 12, backgroundColor: colors.blanco, alignItems: 'center', justifyContent: 'center' },
+	tecnologiaLogo: { width: '100%', height: '100%' },
+	tecnologiaTexto: { flex: 1 },
+	tecnologiaNombre: { color: colors.blanco, fontSize: 18, fontWeight: 'bold' },
+	tecnologiaDescripcion: { color: colors.blanco, fontSize: 14, lineHeight: 20, marginTop: 3 },
 	//---------- contenedores ----------
 	container: {
 		flex: 1,
