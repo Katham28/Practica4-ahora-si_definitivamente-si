@@ -17,6 +17,11 @@ export type Usuario = {
 
 //manda usuario + contraseña hasheada en SHA256; si falla lanza un Error con el mensaje del servidor
 export async function login(user: string, pass: string): Promise<Usuario> {
+	// Rechaza campos vacíos o con solo espacios antes de contactar al servidor.
+	if (!user.trim() || !pass.trim()) {
+		throw new Error("Data missing");
+	}
+
 	const passHash = await Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, pass);
 
 	const body = new URLSearchParams({ user, pass: passHash, token: TOKEN }).toString();

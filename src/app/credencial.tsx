@@ -26,11 +26,17 @@ export default function Credencial() {
 
 	//mientras esta pantalla este abierta, el celular manda el id del usuario al escaner
 	useEffect(() => {
-		if (!NfcCredencial || id === undefined) return;
+		if (__DEV__) console.log('[NFC] Estado:', estado);
+		if (!NfcCredencial || id === undefined) {
+			if (__DEV__) console.warn('[NFC] No se activa: falta el módulo nativo o el ID');
+			return;
+		}
 		NfcCredencial.activar(Number(id));
+		if (__DEV__) console.log('[NFC] Credencial activada. ID:', id);
 
 		let timer: ReturnType<typeof setTimeout> | undefined;
-		const sub = NfcCredencial.addListener("onEscanerDetectado", () => {
+		const sub = NfcCredencial.addListener("onEscanerDetectado", (event) => {
+			if (__DEV__) console.log('[NFC] Evento del servicio: SELECT procesado. ID:', event.id);
 			setDetectado(true);
 			clearTimeout(timer);
 			timer = setTimeout(() => setDetectado(false), 2500);
@@ -40,8 +46,9 @@ export default function Credencial() {
 			sub.remove();
 			clearTimeout(timer);
 			NfcCredencial?.desactivar();
+			if (__DEV__) console.log('[NFC] Credencial desactivada y escucha eliminada');
 		};
-	}, [id]);
+	}, [id, estado]);
 
 	if (!datos) {
 		return (

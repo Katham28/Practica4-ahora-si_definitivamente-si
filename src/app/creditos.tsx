@@ -7,7 +7,6 @@ const tecnologias = [
  { nombre: 'Expo / Expo Router', uso: 'Desarrollo y navegación', logo: require('../../assets/logo-expo.png') },
  { nombre: 'React', uso: 'Componentes y estado', logo: require('../../assets/logo-react.svg') },
  { nombre: 'React Native', uso: 'Interfaz móvil', logo: require('../../assets/logo-react-native.svg') },
- { nombre: 'TypeScript', uso: 'Código con tipos', logo: require('../../assets/logo-typescript.png') },
  { nombre: 'Kotlin', uso: 'Módulo NFC de Android', logo: require('../../assets/logo-kotlin.png') },
  { nombre: 'HCE', uso: 'Emulación de una tarjeta NFC en Android', logo: null },
  { nombre: 'APDU', uso: 'Comandos y respuestas entre la credencial y el lector NFC', logo: null },

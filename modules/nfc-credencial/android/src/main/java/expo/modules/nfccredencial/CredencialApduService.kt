@@ -36,32 +36,41 @@ fun idToBytesLE(id: Int): ByteArray = byteArrayOf(
 //manda un SELECT con nuestro AID (ver nfc_credencial_apduservice.xml)
 class CredencialApduService : HostApduService() {
 
+    private fun responder(bytes: ByteArray, motivo: String): ByteArray {
+        if (BuildConfig.DEBUG) Log.d(TAG, "APDU OUT: ${bytes.joinToString(" ") { "%02X".format(it.toInt() and 0xFF) }} | $motivo")
+        return bytes
+    }
+
     override fun processCommandApdu(commandApdu: ByteArray?, extras: Bundle?): ByteArray {
         if (commandApdu == null) {
-            return byteArrayOf(0x6F, 0x00)
+            return responder(byteArrayOf(0x6F, 0x00), "Comando nulo")
         }
-        Log.d(TAG, "APDU IN: ${commandApdu.joinToString(" ") { "%02X".format(it) }}")
+        if (BuildConfig.DEBUG) Log.d(TAG, "APDU IN (${commandApdu.size} bytes): ${commandApdu.joinToString(" ") { "%02X".format(it.toInt() and 0xFF) }}")
 
         if (commandApdu.size < SELECT_AID.size ||
             !commandApdu.copyOfRange(0, SELECT_AID.size).contentEquals(SELECT_AID)) {
-            return NO_SOPORTADO
+            return responder(NO_SOPORTADO, "SELECT/AID no reconocido; se esperaba 00 A4 04 00 05 F0 12 34 56 78")
         }
 
         val prefs = getSharedPreferences(PREFS, Context.MODE_PRIVATE)
         if (!prefs.contains(KEY_ID)) {
-            Log.d(TAG, "sin sesion, no se manda id")
-            return SIN_ID
+            return responder(SIN_ID, "Sin ID activo; inicia sesion y abre la credencial")
         }
 
         val id = prefs.getInt(KEY_ID, 0)
-        Log.d(TAG, "mandando ID: $id")
+        if (BuildConfig.DEBUG) Log.d(TAG, "SELECT valido; preparando ID=$id en little-endian")
         vibrar()
         NfcCredencialModule.avisarEscaner(id)
-        return idToBytesLE(id) + OK
+        return responder(idToBytesLE(id) + OK, "Respuesta preparada; comprobar recepcion en el lector")
     }
 
     override fun onDeactivated(reason: Int) {
-        Log.d(TAG, "onDeactivated reason=$reason")
+        val motivo = when (reason) {
+            DEACTIVATION_LINK_LOSS -> "Se perdio el enlace NFC"
+            DEACTIVATION_DESELECTED -> "El lector selecciono otra aplicacion"
+            else -> "Motivo desconocido"
+        }
+        if (BuildConfig.DEBUG) Log.d(TAG, "Enlace desactivado: $motivo (reason=$reason)")
     }
 
     @Suppress("DEPRECATION")
