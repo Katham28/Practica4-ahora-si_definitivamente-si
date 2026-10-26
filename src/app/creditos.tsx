@@ -21,9 +21,9 @@ export default function Creditos() {
 
 				<View style={styles.card}>
 				<Text style={styles.mintitle}>Tecnologías ocupadas</Text>
-				<Text style={styles.smallText}>x</Text>
-				<Text style={styles.smallText}>x</Text>
-				<Text style={styles.smallText}>x</Text>
+				<Text style={styles.smallText}>Expo Router</Text>
+				<Text style={styles.smallText}>React Native</Text>
+				<Text style={styles.smallText}> x</Text>
 			</View>
 
 

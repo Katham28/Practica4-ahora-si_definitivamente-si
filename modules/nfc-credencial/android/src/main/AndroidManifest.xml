@@ -1,0 +1,26 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- false para que la app se pueda instalar en celulares sin NFC; la pantalla avisa si no hay -->
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="false" />
+
+    <application>
+        <!-- servicio que contesta al escaner cuando el celular se acerca -->
+        <service
+            android:name="expo.modules.nfccredencial.CredencialApduService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/nfc_credencial_apduservice" />
+        </service>
+    </application>
+
+</manifest>

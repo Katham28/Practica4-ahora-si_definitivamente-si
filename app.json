@@ -1,16 +1,17 @@
 {
   "expo": {
-    "name": "HelloWorldApp",
-    "slug": "HelloWorldApp",
+    "name": "HelloWorldAppAppAppApp",
+    "slug": "HelloWorldAppAppAppApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "helloworldapp",
+    "scheme": "helloworldappappappapp",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
     },
     "android": {
+      "package": "com.equipokai.cybercorp",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

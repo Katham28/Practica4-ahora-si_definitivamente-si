@@ -1,0 +1,4 @@
+<resources>
+    <string name="nfc_credencial_service_description">Credencial CyberCorp</string>
+    <string name="nfc_credencial_aid_description">ID de usuario para el escáner de acceso</string>
+</resources>

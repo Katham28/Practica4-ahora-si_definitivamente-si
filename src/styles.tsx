@@ -39,6 +39,12 @@ export const styles = StyleSheet.create({
 		width: "80%",
 	},
 
+	//la tarjeta brilla en verde cuando el escaner la lee
+	cardDetectada: {
+		borderColor: colors.verdeNeon,
+		borderWidth: 6,
+	},
+
 	foto: {
 		width: 180,
 		height: 180,
