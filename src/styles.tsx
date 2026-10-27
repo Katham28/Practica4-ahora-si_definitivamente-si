@@ -131,7 +131,7 @@ export const styles = StyleSheet.create({
 		fontFamily: fonts.titulo,
 		fontSize: 32,
 		fontWeight: "bold",
-		color: colors.rosaNeon,
+		color: colors.negro,
 	},
 
 	button1: {
